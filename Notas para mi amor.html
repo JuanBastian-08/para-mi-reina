@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para ti 🌻</title>
+<link rel="stylesheet" href="estilo.css">
+  <!--
+    FUENTES: Playfair Display para los títulos (elegante, de revista),
+    Lora para el mensaje (cálido, legible, parecido a carta escrita).
+    Se cargan gratis desde Google Fonts.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;1,400;1,500&display=swap"
+    rel="stylesheet"
+  />
+
+</head>
+
+<body>
+
+  <main class="tarjeta" role="main" aria-label="Carta del día">
+
+    <!-- Ícono principal -->
+    <div class="icono-flor" aria-hidden="true">🌻</div>
+
+    <!--
+      FECHA AUTOMÁTICA
+      El id="fecha" le dice a JavaScript dónde escribir la fecha.
+      Inicia vacío; JS lo llena al cargar la página.
+    -->
+    <p class="fecha" id="fecha" aria-live="polite"></p>
+
+    <!-- Separador decorativo con tulipán -->
+    <div class="separador" aria-hidden="true">🌷</div>
+
+    <!--
+      BOTÓN PARA ABRIR EL MENSAJE
+      id="btn-abrir" permite que JS lo encuentre y le agregue el evento.
+      aria-expanded="false" informa a lectores de pantalla el estado.
+    -->
+    <button
+      id="btn-abrir"
+      aria-expanded="false"
+      aria-controls="contenedor-mensaje"
+    >
+      <span aria-hidden="true">✉️</span>
+      Abrir mensaje de hoy
+    </button>
+<audio id="miMusica" src="felismesiento.mp3"></audio>
+    <!--
+      CONTENEDOR DEL MENSAJE (oculto al inicio)
+      id="contenedor-mensaje" es el objetivo que JS muestra.
+      Empieza sin la clase .visible; JS la agrega al hacer clic.
+    -->
+    <div id="contenedor-mensaje" aria-live="polite">
+
+      <!--
+        EL MENSAJE DE TEXTO
+        id="mensaje-texto" para que JS pueda actualizar el contenido.
+        El texto real viene del JavaScript de abajo.
+      -->
+      <p class="mensaje-texto" id="mensaje-texto"></p>
+
+      <!-- Separador interno -->
+      <div class="separador" aria-hidden="true">🌻</div>
+
+      <!-- Firma fija -->
+      <p class="firma">Con cariño, tatancito</p>
+
+    </div>
+
+    <!-- Tulipanes decorativos al pie -->
+    <div class="flores-pie" aria-hidden="true">🌷 🌻 🌷</div>
+   <script src="java.js"></script>
+  </main>
+</body>
+</html>
+ 
+
+
+
+   
